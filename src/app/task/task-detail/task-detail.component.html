@@ -1,0 +1,32 @@
+<div class="task-detail-container">
+    <h3>Edit task</h3>
+
+    <label>
+        Title: <input class="task-title" [(ngModel)]="task.title"/>
+    </label>
+    <label>
+        Description: <textarea class="task-description" [(ngModel)]="task.description"></textarea>
+    </label>
+    <label>
+        Due Date: <input class="task-due-date" type="date" [(ngModel)]="task.dueDate"/>
+    </label>
+    <label>
+        Status: 
+        <select [(ngModel)]="task.status">
+            <option>Incomplete</option>
+            <option>In Progress</option>
+            <option>Completed</option>
+        </select>
+    </label>
+    <label>
+        Priority: 
+        <select [(ngModel)]="task.priority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+    </label>
+
+    <button (click)="onSave()">Save</button>
+    <button (click)="onCancel()">Cancel</button>
+</div>

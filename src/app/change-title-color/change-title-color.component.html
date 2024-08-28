@@ -1,0 +1,11 @@
+<div class="app-container">
+
+    <h1 [style.color]="selectedColor">Complete Angular Tutorial For Beginners</h1>
+    <div class="section-container">
+        <div *ngFor="let section of sections">
+            <app-section [section]="section" [selectedColor]="selectedColor" (colorChange)="onSectionSelected($event)">
+            </app-section>
+        </div>
+    </div>
+
+</div>

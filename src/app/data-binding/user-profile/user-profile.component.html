@@ -1,0 +1,53 @@
+<div class="user-profile">
+
+    <h1>Welcome, {{name}}!</h1>
+
+    <form>
+        <div>
+            <label for="name">Name:</label>
+            <input 
+                id="name" name="name" 
+                [(ngModel)]="name" (input)="updateButtonsState()"
+            />
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input 
+                id="email" name="email" 
+                [(ngModel)]="email" (input)="updateButtonsState()"
+            />
+        </div>
+
+        <div>
+            <label for="bio">Bio:</label>
+            <textarea 
+                id="bio" name="bio" 
+                [(ngModel)]="bio" (input)="updateButtonsState()">
+            </textarea>
+        </div>
+
+
+
+        <div>
+            <button type="button" (click)="reset()" [disabled]="isResetDisabled">
+                Reset
+            </button>
+
+            <button type="button" (click)="save()">
+                Save
+            </button>
+        </div>
+    </form>
+
+    <div class="profile-preview">
+        <h2>Profile Preview</h2>
+        <p><strong>Name:</strong> {{name}}</p>
+        <p><strong>Email:</strong> {{email}} </p>
+        <p><strong>Bio:</strong> {{bio}} </p>
+    </div>
+    
+    <div>
+        <p>Save button clicked: {{saveCount}} times</p>
+    </div>
+</div>

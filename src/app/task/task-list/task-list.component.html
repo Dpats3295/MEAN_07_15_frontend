@@ -1,0 +1,22 @@
+<div *ngIf="tasks.length === 0">
+    No task available
+</div>
+
+<div *ngFor="let task of tasks | taskStatusFilter : 'Incomplete'">
+    <div class="task-container" appHoverEffect [appOverdueHighlight]="task.dueDate">
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+        <p>Due Date: {{ task.dueDate }}</p>
+        <p>Status: {{ task.status }}</p>
+        <p>Priority: {{ task.priority }}</p>
+        <button (click)="onEdit(task)">Edit task</button>
+
+    </div>
+</div>
+
+<app-task-detail 
+    *ngIf="selectedTask" 
+    [task]="selectedTask" 
+    (save)="onUpdate($event)" 
+    (cancel)="onCancel()">
+</app-task-detail>

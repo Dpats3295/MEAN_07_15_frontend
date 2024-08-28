@@ -1,0 +1,16 @@
+.header-container {
+    display: block;
+    text-align: center;
+    margin: 5px;
+}
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 5px;
+}
+
+button {
+    background-color: gainsboro;
+}

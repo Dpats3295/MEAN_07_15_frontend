@@ -1,0 +1,27 @@
+.task-detail-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.task-detail-container label{
+    display: block;
+    margin: 5px;
+}
+
+.task-title,
+.task-description {
+    display: block;
+    width: 95%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.task-due-date,
+.task-detail-container select,
+.task-detail-container button {
+    width: 20%;
+    padding: 5px;
+    margin: 5px;
+}

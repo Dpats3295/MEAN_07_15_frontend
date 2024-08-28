@@ -1,0 +1,79 @@
+<form [formGroup]="registrationForm">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text" />
+        <div *ngIf="submitted && formControls['username'].errors">
+            <span *ngIf="formControls['username'].errors['required']">
+                Username is required.
+            </span>
+            <span *ngIf="formControls['username'].errors['minLength']">
+                Username must be at least 3 characters long.
+            </span>
+            <span *ngIf="formControls['username'].errors['usernameTaken']">
+                Username is already taken.
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" />
+        <div *ngIf="submitted && formControls['email'].errors">
+            <span *ngIf="formControls['email'].errors['required']">
+                Email is required.
+            </span>
+            <span *ngIf="formControls['email'].errors['email']">
+                Please enter a valid email address.
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+        <div *ngIf="submitted && formControls['password'].errors">
+            <span *ngIf="formControls['password'].errors['required']">
+                Password is required.
+            </span>
+            <span *ngIf="formControls['password'].errors['minLength']">
+                Password must be at least 6 characters long.
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+        <div *ngIf="submitted && formControls['confirmPassword'].errors">
+            <span *ngIf="formControls['confirmPassword'].errors['required']">
+                Confirm Password is required.
+            </span>
+            <span *ngIf="registrationForm.errors?.['passwordMismatch']">
+                Passwords do not match.
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <label for="preferredContactMethod">Preferred Contact Method</label>
+        <select id="preferredContactMethod" formControlName="preferredContactMethod">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+        </select>
+    </div>
+
+    <div *ngIf="formControls['preferredContactMethod'].value === 'phone'">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+        <div *ngIf="submitted && formControls['phoneNumber']?.errors?.['required']">
+            <span>
+                Please provide at least one contact method.
+            </span>
+        </div>
+    </div>
+
+    <button type="submit" (click)="onSubmit()" [disabled]="registrationForm.invalid">
+        Register
+    </button>
+
+</form>

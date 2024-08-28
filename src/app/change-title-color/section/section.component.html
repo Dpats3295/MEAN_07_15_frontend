@@ -1,0 +1,9 @@
+<div class="section" [ngStyle]="{borderColor: selectedColor === section.color ? section.color : 'black'}">
+
+    <h2> {{ section.title }} </h2>
+    <p> {{ section.body }} </p>
+    <button [style.backgroundColor]="section.color" (click)="onClick()">
+        Set {{ section.color }}
+    </button>
+
+</div>

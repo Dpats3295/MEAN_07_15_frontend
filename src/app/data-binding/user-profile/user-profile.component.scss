@@ -1,0 +1,30 @@
+.user-profile{
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-profile h1, 
+.user-profile h2{
+    text-align: center;
+}
+
+.user-profile div{
+    margin-bottom: 10px;
+}
+
+.user-profile label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.user-profile input,
+.user-profile textarea{
+    width: 50%;
+    padding: 5px;
+}
+
+.user-profile textarea{
+    width: 100%;
+}
